@@ -1,0 +1,16 @@
+@import '../../../sass/constants';
+@import '../../../sass/mixins';
+
+.logo {
+  margin-top: 20px;
+  margin-bottom: 45px;
+  @include mobile {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  img {
+    @include mobile {
+      width: 50%;
+    }
+  }
+}

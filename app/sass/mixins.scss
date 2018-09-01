@@ -1,0 +1,121 @@
+@import 'constants';
+
+$mobile: 768px;
+
+@mixin mobile {
+  @media only screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin input {
+  font-family: ProximaNova, serif;
+  font-size: 18px;
+  height: 50px;
+  border: solid 1px $color__gray-6e;
+  background-color: $color__gray--lighten;
+  padding: 14px 15px;
+  &:focus {
+    outline: none;
+    border: solid 1px $color__pink;
+    background-color: $color__white;
+  }
+}
+
+@mixin button {
+  width: 248px;
+  height: 50px;
+  background-color: $color__pink;
+  color: $color__white;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  &:active {
+    outline: none;
+  }
+}
+
+@mixin formTitle {
+  margin-bottom: 20px;
+  p {
+    font-size: 24px;
+    font-weight: normal;
+  }
+}
+
+@mixin errorMsg {
+  font-size: 12px;
+  color: $color__bright_red;
+  text-align: center;
+  span {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+@mixin select {
+  &__control {
+    border-radius: unset;
+    height: 50px;
+    border: 1px solid $color__gray-6e;
+    &--is-focused {
+      outline: none;
+      border: solid 1px $color__pink;
+      box-shadow: none;
+      background-color: $color__white;
+    }
+  }
+  &__indicator-separator {
+    display: none;
+  }
+  &__dropdown-indicator {
+    color: $color__checkbox;
+  }
+}
+
+@mixin selectError {
+  @include select;
+  &__control {
+    border: 2px solid #fd6464
+  }
+}
+
+@mixin check {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -5px 0 0 -6px;
+  height: 4px;
+  width: 8px;
+  border: solid;
+  border-width: 0 0 4px 4px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+@mixin information {
+  &__wrap {
+    display: flex;
+    .information {
+      height: 20px;
+      width: 25px;
+      background: url(/assets/black-question.png) no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 13px;
+      margin-left: 7px;
+      cursor: pointer;
+    }
+  }
+}

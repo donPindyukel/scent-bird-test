@@ -1,0 +1,32 @@
+@import '../../../sass/constants';
+@import '../../../sass/mixins';
+
+.desktop-app {
+  width: 100%;
+  max-width: 1200px;
+  font-family: ProximaNova, serif;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 200px;
+  &__product-info {
+    max-width: 400px;
+    width: 34%;
+    padding-left: 5px;
+  }
+  &__subscription {
+    max-width: 740px;
+    width: 66%;
+    padding: 0 10px;
+  }
+  .form {
+    &__shipping-address {
+      margin-bottom: 40px;
+    }
+    &__payment {
+      margin-bottom: 30px;
+    }
+  }
+}

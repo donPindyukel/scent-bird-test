@@ -1,0 +1,122 @@
+@import '../../../sass/constants';
+@import '../../../sass/mixins';
+
+.shipping-address {
+  &__title {
+    @include formTitle;
+    @include mobile {
+      text-align: center;
+    }
+  }
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .data-input {
+      @include input;
+      width: 100%;
+      margin-bottom: 5px;
+      &.error {
+        border: 2px solid $color__red;
+      }
+    }
+    .error-notification {
+      font-size: 12px;
+      color: $color__red_error;
+    }
+  }
+  .controls {
+    margin-bottom: 20px;
+    &--bottom {
+      margin-bottom: 20px;
+    }
+    &_md {
+      width: 48.5%;
+      @include mobile {
+        width: 100%;
+      }
+    }
+    &_lg {
+      width: 65.5%;
+      @include mobile {
+        width: 100%;
+      }
+    }
+    &_sm {
+      width: 31%;
+      @include mobile {
+        width: 100%;
+      }
+    }
+    &_full {
+      width: 100%;
+    }
+    &_custom {
+      width: 48%;
+      @include mobile {
+        width: 100%;
+      }
+    }
+    &__message {
+        .message {
+          padding-top: 15px;
+        }
+    }
+    &__zip {
+      position: relative;
+      .check {
+        @include check;
+        top: 33%;
+        left: 90%;
+        height: 10px;
+        width: 15px;
+        border-color: $color__checkbox;
+      }
+    }
+    .checkbox{
+      .label {
+        @include mobile {
+          font-size: 14px;
+        }
+        &__input {
+          display: none;
+          &:checked ~ .label__box:before {
+            display: block;
+          }
+        }
+        &__box {
+          position: relative;
+          display: inline-block;
+          vertical-align: top;
+          margin-right: 12px;
+          width: 16px;
+          height: 16px;
+          border: 2px solid $color__checkbox;
+          background: $color__checkbox;
+          &:before {
+            content: '';
+            @include check;
+            width: 10px;
+            border-width: 0 0 2px 2px;
+            display: none;
+            border-color: $color__white;
+          }
+        }
+      }
+    }
+    &__error-message {
+      @include errorMsg;
+    }
+  }
+  .state, .cities {
+    font-size: 18px;
+    .select {
+      @include select;
+    }
+    .error {
+      .select {
+        @include selectError
+      }
+    }
+  }
+}

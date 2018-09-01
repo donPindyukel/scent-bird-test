@@ -1,0 +1,25 @@
+@import '../../../sass/constants';
+@import '../../../sass/mixins';
+
+.mobile-app {
+  font-family: ProximaNova, serif;
+  padding: 20px;
+  .logo-wrap {
+    text-align: center;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    &__title {
+      text-align: center;
+    }
+    &__product-info {
+      max-width: unset;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    &__gender-select {
+      margin-bottom: 40px;
+    }
+  }
+}

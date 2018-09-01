@@ -1,0 +1,88 @@
+@import '../../../sass/constants';
+@import '../../../sass/mixins';
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  @include desktop {
+    border: 1px solid $color__gray-9b;
+    padding: 30px;
+  }
+  margin-bottom: 20px;
+  &__product-image {
+    margin-bottom: 20px;
+    border-bottom: 1px solid $color__gray-6e;
+  }
+  &__product-description {
+    font-size: 14px;
+    border-bottom: 1px solid $color__gray-6e;
+    margin-bottom: 20px;
+    .product-description {
+      &__subscription,
+      &__shopping,
+      &__tax,
+      &__discount,
+      &__credit {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+      &__discount {
+        .discount {
+          &__value {
+            color: $color__pink;
+          }
+        }
+      }
+      &__credit {
+        .credit {
+          &__value {
+            display: flex;
+            .value {
+              &__input-checkbox {
+                display: none;
+              }
+              &__val {
+                display: flex;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__product-ammount {
+    .product-ammount {
+      &__total {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      &__link {
+        .link {
+          &__text {
+            color: $color__pink;
+            border-bottom: 1px dashed $color__gray-9b;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+.value__checkbox:after {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  background-color: $color__white;
+  border: solid 1px #979797;
+  margin-left: 5px;
+}
+.value__input-checkbox:checked ~ .value__checkbox:after {
+  background: url(/assets/check.png) no-repeat;
+  background-position: 50% 50%;
+  background-size: 90%;
+}

@@ -1,0 +1,78 @@
+@import '../../../sass/constants';
+@import '../../../sass/mixins';
+
+.gender-select {
+  &__title {
+    @include formTitle;
+    text-align: center;
+  }
+  &__selector {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 35px;
+    input {
+      display: none;
+    }
+    .selector {
+      &--styles {
+        display: block;
+        width: 125px;
+        height: 100px;
+        p {
+          position: absolute;
+          bottom: -35px;
+          font-size: 24px;
+        }
+        &:after {
+          content: '';
+          width: 35px;
+          height: 35px;
+          background: url(/assets/radiobutton.png) center no-repeat;
+          background-size: contain;
+          display: none;
+        }
+      }
+      &__male {
+        background: url(/assets/boy_c.png) center no-repeat;
+        filter: grayscale(100%);
+        background-size: contain;
+        margin-right: 20px;
+        position: relative;
+        &:after {
+          position: absolute;
+          top: 44px;
+          left: 32px;
+        }
+      }
+      &__female {
+        background: url(/assets/girl_c.png) center no-repeat;
+        filter: grayscale(100%);
+        background-size: contain;
+        position: relative;
+        &:after {
+          position: absolute;
+          top: 16px;
+          left: 45px;
+        }
+      }
+    }
+  }
+  input[id="genderMale"]:checked ~ .selector__male.selector--styles {
+    filter: grayscale(0);
+    &:after {
+      display: block;
+    }
+  }
+  input[id="genderFemale"]:checked ~ .selector__female.selector--styles {
+    filter: grayscale(0);
+    &:after {
+      display: block;
+    }
+  }
+  .error-notification {
+    font-size: 12px;
+    color: $color__red_error;
+    text-align: center;
+  }
+}
+

@@ -1,0 +1,43 @@
+@import '../../../sass/constants';
+@import '../../../sass/mixins';
+
+.account-create {
+  &__title {
+    @include formTitle;
+  }
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    .data-input {
+      @include input;
+      width: 100%;
+      margin-bottom: 5px;
+      background: $color__gray--lighten;
+      &.error {
+        border: 2px solid $color__red;
+      }
+    }
+    .error-notification {
+      font-size: 12px;
+      color: $color__red_error;
+    }
+  }
+  .controls {
+    margin-bottom: 20px;
+    &_position {
+      width: 48.5%;
+    }
+  }
+  &__login-link {
+    font-size: 14px;
+    font-weight: normal;
+    color: $color__gray-9b;
+    text-align: center;
+    a {
+      color: $color__pink;
+    }
+  }
+  &__error-message {
+    @include errorMsg;
+  }
+}

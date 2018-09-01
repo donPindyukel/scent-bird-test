@@ -1,0 +1,9 @@
+@import '../../../sass/constants';
+@import '../../../sass/mixins';
+
+.card-image {
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}

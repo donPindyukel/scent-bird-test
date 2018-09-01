@@ -1,0 +1,44 @@
+@import '../../../sass/constants';
+@import '../../../sass/mixins';
+
+.buttons {
+  @include mobile {
+    text-align: center;
+  }
+  @include desktop {
+    text-align: right;
+  }
+  &__back-button {
+    font-size: 18px;
+    font-weight: normal;
+    color: $color__gray-9b;
+  }
+  &__buy {
+    position: relative;
+    @include desktop {
+      margin-left: 40px;
+    }
+    @include mobile {
+      width: 80%;
+    }
+    @include button;
+    span {
+      font-size: 34px;
+    }
+    &:after {
+      content: '';
+      width: 25px;
+      height: 40px;
+      background: black;
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 4px;
+      background: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjRweCIgdmVyc2lvbj0iMS4xIiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiPgogIDxnPgogICAgPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0ibTMwLjcxMSw2My4zMDZjMC4zOTMsMC4zOTMgMC45MDcsMC41ODkgMS40MjIsMC41ODkgMC41MTQsMCAxLjAyOC0wLjE5NiAxLjQyMi0wLjU4OWwyMS4yMzctMjEuMjM5YzAuNzg1LTAuNzg2IDAuNzg1LTIuMDU5IDAtMi44NDQtMC43ODYtMC43ODUtMi4wNTktMC43ODUtMi44NDQsMGwtMTcuODA0LDE3LjgwNnYtNTQuNzgxYzAtMS4xMS0wLjg5OS0yLjAxMS0yLjAxMS0yLjAxMXMtMi4wMTEsMC45LTIuMDExLDIuMDExdjU0Ljc4MWwtMTcuODA4LTE3LjgwNmMtMC43ODUtMC43ODUtMi4wNTgtMC43ODUtMi44NDMsMC0wLjc4NiwwLjc4NS0wLjc4NiwyLjA1OCAwLDIuODQ0bDIxLjI0LDIxLjIzOXoiLz4KICA8L2c+Cjwvc3ZnPgo=) no-repeat;
+      transform: rotate(270deg);
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+}

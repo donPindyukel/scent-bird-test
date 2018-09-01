@@ -1,0 +1,166 @@
+@import '../../../sass/constants';
+@import '../../../sass/mixins';
+
+.payment {
+  @include mobile {
+    margin-bottom: 35px;
+  }
+  &__title {
+    @include formTitle;
+    @include mobile {
+      text-align: center;
+    }
+  }
+  &__payment-box {
+    border: 1px solid $color__gray-6e;
+    background: $color__gray--lighten;
+    padding: 30px;
+    .header {
+      margin-bottom: 20px;
+      &__secure {
+        display: flex;
+        justify-content: space-between;
+        @include mobile {
+          flex-wrap: wrap;
+        }
+        .secure {
+          &__accepts {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+            height: 22px;
+            width: 144px;
+            background: url(/assets/shop-online.png) center no-repeat;
+            background-size: cover;
+          }
+          &__text {
+            font-size: 13px;
+            @include mobile {
+              font-size: 11px;
+            }
+            font-weight: 400;
+            color: $color__green--secure;
+            display: inline-block;
+            vertical-align: middle;
+            &:before {
+              content: "";
+              display: inline-block;
+              width: 30px;
+              height: 35px;
+              background: url(/assets/secure.png) no-repeat;
+              background-size: contain;
+              margin-right: 10px;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .data-input {
+        @include input;
+        width: 100%;
+        background: $color__white;
+        margin-bottom: 5px;
+        &.error {
+          border: 2px solid $color__red;
+        }
+      }
+      .error-notification {
+        font-size: 12px;
+        color: $color__red_error;
+      }
+      &__credit-card-num {
+        margin-bottom: 20px;
+        width: 63.5%;
+        @include mobile {
+          width: 100%;
+        }
+        @include information;
+        position: relative;
+        &__wrap {
+          .information {
+            position: absolute;
+            background-repeat: no-repeat;
+            right: 15px;
+          }
+        }
+      }
+      &__secure-code {
+        margin-bottom: 20px;
+        width: 33%;
+        @include information;
+        @include mobile {
+          order: 1;
+          width: 80%;
+        }
+      }
+      .exp-date {
+        width: 70%;
+        @include mobile {
+          width: 100%;
+        }
+        &__block {
+          width: 80%;
+          @include mobile {
+            width: 100%;
+          }
+          display: flex;
+          justify-content: space-between;
+          .data-input {
+            width: 40%;
+          }
+          .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: $color__gray-9b;
+          }
+        }
+      }
+    }
+  }
+  .exp-date__block {
+    font-size: 18px;
+    &_month, &_year {
+      margin-right: 6%;
+      @include mobile {
+        width: 50%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+    &_month {
+      @include mobile {
+        margin-right: 6%;
+      }
+    }
+    .select {
+      @include select;
+      &__control {
+        @include desktop {
+          width: 140px;
+        }
+        background-color: $color__white;
+        margin-bottom: 5px;
+      }
+      &__dropdown-indicator {
+        color: $color__gray-d8;
+      }
+    }
+    .error {
+      .select {
+        @include selectError;
+        &__dropdown-indicator {
+          color: $color__gray-d8;
+        }
+      }
+    }
+  }
+}
+
+

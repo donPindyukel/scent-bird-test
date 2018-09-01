@@ -1,0 +1,16 @@
+@import '../../../sass/constants';
+
+.title {
+  font-family: 'ProximaNova', serif;
+  margin-bottom: 40px;
+  &__main-title {
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0;
+  }
+  &__description {
+    color: $color__pink;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}

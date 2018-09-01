@@ -1,0 +1,30 @@
+@import 'constants';
+@import 'mixins';
+
+html, body, ul, p {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 1em;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 100%;
+}
+
+
+@font-face{
+  font-family: 'ProximaNova';
+  src: url('../fonts/proximanova-regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
